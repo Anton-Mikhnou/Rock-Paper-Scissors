@@ -1,8 +1,13 @@
 let arr = ["Rock", "Sciccors", "Paper"]
 function getComputerChoice(arr) {
-    const randomElement = Math.floor(Math.random() * arr.length);
+    const randomElement = getRandomFloat(0, 2);
     return arr[randomElement]; 
 }
+
+function getRandomFloat(min , max){
+    return Math.round(Math.random() * (max - min) + min);
+}
+// getRandomFloat(0, 2);
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === "Rock" && computerSelection === "Scissors"){
@@ -26,14 +31,11 @@ function playRound(playerSelection, computerSelection) {
     } else console.log("noSelect");
 }
 // game 5 round
-function game(){
-    console.log(
-        playRound()
-    )
+function game(playRound){
+    console.log("1:",playRound(playerSelection, computerSelection));
 }
 
 
 const playerSelection = "Rock";
-playerSelection.toLowerCase === playerSelection.toUpperCase
 const computerSelection = getComputerChoice(arr);
-console.log(playRound(playerSelection, computerSelection));
+console.log("2:",playRound(playerSelection, computerSelection));
