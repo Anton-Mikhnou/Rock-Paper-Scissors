@@ -1,4 +1,4 @@
-let arr = ["Rock", "Sciccors", "Paper"]
+let arr = ["Rock", "Scissors", "Paper"]
 function getComputerChoice(arr) {
     const randomElement = getRandomFloat(0, 2);
     return arr[randomElement]; 
@@ -11,31 +11,35 @@ function getRandomFloat(min , max){
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === "Rock" && computerSelection === "Scissors"){
-        console.log("You win!", playerSelection, "beats", computerSelection);
+        return `You win! ${playerSelection} beats ${computerSelection}.`;
     } else if (playerSelection === "Rock" && computerSelection === "Rock"){
-        console.log("Draw!");
+        return `Draw!`;
     } else if (playerSelection === "Rock" && computerSelection === "Paper"){
-        console.log("You lose!", computerSelection, "beats", playerSelection);
+        return `You lose! ${computerSelection} beats ${playerSelection}.`;
     } else if (playerSelection === "Scissors" && computerSelection === "Paper"){
-        console.log("You win!", playerSelection, "beats", computerSelection);
+        return `You win! ${playerSelection} beats ${computerSelection}.`;
     } else if (playerSelection === "Scissors" && computerSelection === "Scissors"){
-        console.log("Draw!");
+        return "Draw!";
     } else if (playerSelection === "Scissors" && computerSelection === "Rock"){
-        console.log("You lose!", computerSelection, "beats", playerSelection);
+        return `You lose! ${computerSelection} beats ${playerSelection}.`;
     } else if (playerSelection === "Paper" && computerSelection === "Rock"){
-        console.log("You win!", playerSelection, "beats", computerSelection);
+        return`You win! ${playerSelection} beats ${computerSelection}.`;
     } else if (playerSelection === "Paper" && computerSelection === "Paper"){
-        console.log("Draw!");
+        return "Draw!";
     } else if (playerSelection === "Paper" && computerSelection === "Scissors"){
-        console.log("You lose!", computerSelection, "beats", playerSelection);
-    } else console.log("noSelect");
+        return `You lose! ${computerSelection} beats ${playerSelection}.`;
+    } else return "noSelect";
 }
-// game 5 round
-function game(playRound){
-    console.log("1:",playRound(playerSelection, computerSelection));
+
+
+
+function game() {
+    console.log(playRound(playerSelection, computerSelection));
 }
 
 
 const playerSelection = "Rock";
 const computerSelection = getComputerChoice(arr);
-console.log("2:",playRound(playerSelection, computerSelection));
+game();
+
+// console.log("2:",playRound(playerSelection, computerSelection));
