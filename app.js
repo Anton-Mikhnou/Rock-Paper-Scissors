@@ -1,4 +1,4 @@
-let enterSelect = prompt("Make your choice!");
+// let enterSelect = prompt("Make your choice!");
 
 
 let arr = ["Rock", "Scissors", "Paper"]
@@ -36,14 +36,29 @@ function playRound(playerSelection, computerSelection) {
 
 
 
+// function game() {
+//     let i = console.log(playRound(playerSelection, computerSelection));
+//     for (i = 1; i <= 5; i++){
+//         return i;
+//     }
+//     return game();
+// }
+
+
+// const playerSelection =  enterSelect;
+// const computerSelection = getComputerChoice(arr);
+// game();
+
+
+
 function game() {
-    console.log(playRound(playerSelection, computerSelection));
+    for (let i = 1; i <= 5; i++) {
+        let enterSelect = prompt("Make your choice! (Rock, Scissors, or Paper)").trim();
+        const playerSelection = enterSelect.charAt(0).toUpperCase() + enterSelect.slice(1).toLowerCase();
+        const computerSelection = getComputerChoice(arr);
+        console.log(playRound(playerSelection, computerSelection));
+    }
 }
-
-
-const playerSelection =  enterSelect;
-const computerSelection = getComputerChoice(arr);
 game();
-
 
 // console.log("2:",playRound(playerSelection, computerSelection));
