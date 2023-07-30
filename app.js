@@ -1,3 +1,6 @@
+let enterSelect = prompt("Make your choice!");
+
+
 let arr = ["Rock", "Scissors", "Paper"]
 function getComputerChoice(arr) {
     const randomElement = getRandomFloat(0, 2);
@@ -38,8 +41,9 @@ function game() {
 }
 
 
-const playerSelection = "Rock";
+const playerSelection =  enterSelect;
 const computerSelection = getComputerChoice(arr);
 game();
+
 
 // console.log("2:",playRound(playerSelection, computerSelection));
