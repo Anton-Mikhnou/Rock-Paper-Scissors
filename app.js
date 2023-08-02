@@ -16,22 +16,28 @@ let pointComputer = 0;
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === "Rock" && computerSelection === "Scissors"){
+        ++pointPlayer;
         return `You win! ${playerSelection} beats ${computerSelection}.`;
     } else if (playerSelection === "Rock" && computerSelection === "Rock"){
         return `Draw!`;
     } else if (playerSelection === "Rock" && computerSelection === "Paper"){
+        ++pointComputer;
         return `You lose! ${computerSelection} beats ${playerSelection}.`;
     } else if (playerSelection === "Scissors" && computerSelection === "Paper"){
+        ++pointPlayer;
         return `You win! ${playerSelection} beats ${computerSelection}.`;
     } else if (playerSelection === "Scissors" && computerSelection === "Scissors"){
         return `Draw!`;
     } else if (playerSelection === "Scissors" && computerSelection === "Rock"){
+        ++pointComputer;
         return `You lose! ${computerSelection} beats ${playerSelection}.`;
     } else if (playerSelection === "Paper" && computerSelection === "Rock"){
+        ++pointPlayer;
         return`You win! ${playerSelection} beats ${computerSelection}.`;
     } else if (playerSelection === "Paper" && computerSelection === "Paper"){
         return `Draw!`;
     } else if (playerSelection === "Paper" && computerSelection === "Scissors"){
+        ++pointComputer;
         return `You lose! ${computerSelection} beats ${playerSelection}.`;
     } else return `noSelect`;
 }
@@ -48,39 +54,6 @@ function game() {
 }
 game();
 
-// let pointPlayer = 0;
-// function showPointPlayer() {
-//     for (pointPlayer = 0; playRound = `You win! ${playerSelection} beats ${computerSelection}.`; pointPlayer++){
-//         return pointPlayer++;
-//     }
-// }
-
-// let pointComputer = 0;
-// function showPointComputer() {
-//     for (pointComputer = 0; playRound = `You lose! ${computerSelection} beats ${playerSelection}.`; pointComputer++){
-//         return pointComputer++;
-//     }
-// }
-
-// function showPoint(showPointPlayer, showPointComputer){
-//     return `${showPointPlayer}":"${showPointComputer}`; 
-// }
-
-// showPoint(showPointPlayer, showPointComputer);
-
-
-
-// function getPointPlayer(){
-//     if(game() = `You win! ${playerSelection} beats ${computerSelection}.`){
-//         return pointPlayer++;
-//     }
-// }
-
-// function getPointCoputer(){
-//     if(game() = `You lose! ${computerSelection} beats ${playerSelection}.`){
-//         return pointComputer++;
-//     }
-// }
 
 function showPoint(pointPlayer, pointComputer){
     console.log(`${pointPlayer}:${pointComputer}`);
