@@ -1,6 +1,3 @@
-// let enterSelect = prompt("Make your choice!");
-
-
 let arr = ["Rock", "Scissors", "Paper"]
 function getComputerChoice(arr) {
     const randomElement = getRandomFloat(0, 2);
@@ -19,6 +16,8 @@ function playRound(playerSelection, computerSelection) {
         ++pointPlayer;
         return `You win! ${playerSelection} beats ${computerSelection}.`;
     } else if (playerSelection === "Rock" && computerSelection === "Rock"){
+        pointComputer
+        pointPlayer
         return `Draw!`;
     } else if (playerSelection === "Rock" && computerSelection === "Paper"){
         ++pointComputer;
@@ -27,6 +26,8 @@ function playRound(playerSelection, computerSelection) {
         ++pointPlayer;
         return `You win! ${playerSelection} beats ${computerSelection}.`;
     } else if (playerSelection === "Scissors" && computerSelection === "Scissors"){
+        pointComputer
+        pointPlayer
         return `Draw!`;
     } else if (playerSelection === "Scissors" && computerSelection === "Rock"){
         ++pointComputer;
@@ -35,6 +36,8 @@ function playRound(playerSelection, computerSelection) {
         ++pointPlayer;
         return`You win! ${playerSelection} beats ${computerSelection}.`;
     } else if (playerSelection === "Paper" && computerSelection === "Paper"){
+        pointComputer
+        pointPlayer
         return `Draw!`;
     } else if (playerSelection === "Paper" && computerSelection === "Scissors"){
         ++pointComputer;
@@ -61,5 +64,12 @@ function showPoint(pointPlayer, pointComputer){
 
 showPoint(pointPlayer, pointComputer);
 
+function winnerDetermination(){
+    if (pointPlayer > pointComputer){
+        console.log("TOU WIN!");
+    } else if (pointPlayer = pointComputer){
+        console.log("DRAW");
+    } else console.log("YOU LOSE!"); 
+}
 
-
+winnerDetermination();
