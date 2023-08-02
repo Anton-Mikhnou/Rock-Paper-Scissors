@@ -11,6 +11,7 @@ function getRandomFloat(min , max){
 let pointPlayer = 0;
 let pointComputer = 0;
 
+// one round game
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === "Rock" && computerSelection === "Scissors"){
         ++pointPlayer;
@@ -46,7 +47,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-
+// 5 round game
 function game() {
     for (let i = 1; i <= 5; i++) {
         let enterSelect = prompt("Make your choice! (Rock, Scissors, or Paper)").trim();
