@@ -10,7 +10,9 @@ function getComputerChoice(arr) {
 function getRandomFloat(min , max){
     return Math.round(Math.random() * (max - min) + min);
 }
-// getRandomFloat(0, 2);
+
+let pointPlayer = 0;
+let pointComputer = 0;
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === "Rock" && computerSelection === "Scissors"){
@@ -36,21 +38,6 @@ function playRound(playerSelection, computerSelection) {
 
 
 
-// function game() {
-//     let i = console.log(playRound(playerSelection, computerSelection));
-//     for (i = 1; i <= 5; i++){
-//         return i;
-//     }
-//     return game();
-// }
-
-
-// const playerSelection =  enterSelect;
-// const computerSelection = getComputerChoice(arr);
-// game();
-
-
-
 function game() {
     for (let i = 1; i <= 5; i++) {
         let enterSelect = prompt("Make your choice! (Rock, Scissors, or Paper)").trim();
@@ -61,4 +48,45 @@ function game() {
 }
 game();
 
-// console.log("2:",playRound(playerSelection, computerSelection));
+// let pointPlayer = 0;
+// function showPointPlayer() {
+//     for (pointPlayer = 0; playRound = `You win! ${playerSelection} beats ${computerSelection}.`; pointPlayer++){
+//         return pointPlayer++;
+//     }
+// }
+
+// let pointComputer = 0;
+// function showPointComputer() {
+//     for (pointComputer = 0; playRound = `You lose! ${computerSelection} beats ${playerSelection}.`; pointComputer++){
+//         return pointComputer++;
+//     }
+// }
+
+// function showPoint(showPointPlayer, showPointComputer){
+//     return `${showPointPlayer}":"${showPointComputer}`; 
+// }
+
+// showPoint(showPointPlayer, showPointComputer);
+
+
+
+// function getPointPlayer(){
+//     if(game() = `You win! ${playerSelection} beats ${computerSelection}.`){
+//         return pointPlayer++;
+//     }
+// }
+
+// function getPointCoputer(){
+//     if(game() = `You lose! ${computerSelection} beats ${playerSelection}.`){
+//         return pointComputer++;
+//     }
+// }
+
+function showPoint(pointPlayer, pointComputer){
+    console.log(`${pointPlayer}:${pointComputer}`);
+}
+
+showPoint(pointPlayer, pointComputer);
+
+
+
