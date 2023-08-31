@@ -1,0 +1,35 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.score{
+    padding: 16px;
+}
+
+.btn{
+    display: flex;
+    padding: 16px;
+    gap: 16px;
+}
+
+.gameBtn{
+    background-color: purple;
+}
+
+.active{
+    background-color: aqua;
+}
+
+span{
+    font-size: 40px;
+}
