@@ -10,23 +10,26 @@ function getRandomFloat(min , max){
 
 let pointPlayer = 0;
 let pointComputer = 0;
-
 // document.getElementById('gameBtn').addEventListener('click', playRound);
 // let button = document.getElementById('gameBtn').addEventListener('click', playerChoiceFn)
 let buttons = document.querySelectorAll('.gameBtn');
 buttons.forEach(buttons => {
     buttons.addEventListener('click', (event) => {
-        event.target.classList.add('active');
-        return buttons.textContent;
+        event.target.classList.add('active'); 
+        let playerSelection = event.target.getAttribute('name')
+        console.log(playRound(playerSelection, computerSelection));
     });
 });
 
 
-function playerChoiceFn(){
-    const buttonContent = document.getElementById('gameBtn'); 
-    const playerSelection = buttonContent.getAttribute('name');
-    console.log(playerSelection)
-}
+
+
+
+// function playerChoiceFn(){
+//     const buttonContent = document.getElementById('gameBtn'); 
+//     const playerSelection = buttonContent.getAttribute('name');
+//     console.log(playerSelection)
+// }
 
 
 
