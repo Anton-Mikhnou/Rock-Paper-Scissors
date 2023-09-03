@@ -1,4 +1,4 @@
-let arr = ["Rock", "Scissors", "Paper"]
+let arr = ["Rock", "Scissors", "Paper"];
 function getComputerChoice(arr) {
     const randomElement = getRandomFloat(0, 2);
     return arr[randomElement]; 
@@ -8,29 +8,26 @@ function getRandomFloat(min , max){
     return Math.round(Math.random() * (max - min) + min);
 }
 
+// const computerSelection = getComputerChoice(arr);
+// console.log('computerSelection',computerSelection)
 let pointPlayer = 0;
 let pointComputer = 0;
-// document.getElementById('gameBtn').addEventListener('click', playRound);
-// let button = document.getElementById('gameBtn').addEventListener('click', playerChoiceFn)
+let playerSelection;
+
+
 let buttons = document.querySelectorAll('.gameBtn');
+let scoreDisplay = document.querySelector('.score');
+let winnerDisplay = document.querySelector('.winner');
 buttons.forEach(buttons => {
     buttons.addEventListener('click', (event) => {
         event.target.classList.add('active'); 
-        let playerSelection = event.target.getAttribute('name')
-        console.log(playRound(playerSelection, computerSelection));
+        playerSelection = event.target.getAttribute('name');
+        const computerSelection = getComputerChoice(arr);
+        playRound(playerSelection, computerSelection);
+        scoreDisplay.textContent = `${pointPlayer} : ${pointComputer}`;
+        winnerDetermination();
     });
 });
-
-
-
-
-
-// function playerChoiceFn(){
-//     const buttonContent = document.getElementById('gameBtn'); 
-//     const playerSelection = buttonContent.getAttribute('name');
-//     console.log(playerSelection)
-// }
-
 
 
 // one round game
@@ -39,8 +36,6 @@ function playRound(playerSelection, computerSelection) {
         ++pointPlayer;
         return `You win! ${playerSelection} beats ${computerSelection}.`;
     } else if (playerSelection === "Rock" && computerSelection === "Rock"){
-        pointComputer
-        pointPlayer
         return `Draw!`;
     } else if (playerSelection === "Rock" && computerSelection === "Paper"){
         ++pointComputer;
@@ -49,8 +44,6 @@ function playRound(playerSelection, computerSelection) {
         ++pointPlayer;
         return `You win! ${playerSelection} beats ${computerSelection}.`;
     } else if (playerSelection === "Scissors" && computerSelection === "Scissors"){
-        pointComputer
-        pointPlayer
         return `Draw!`;
     } else if (playerSelection === "Scissors" && computerSelection === "Rock"){
         ++pointComputer;
@@ -59,8 +52,6 @@ function playRound(playerSelection, computerSelection) {
         ++pointPlayer;
         return`You win! ${playerSelection} beats ${computerSelection}.`;
     } else if (playerSelection === "Paper" && computerSelection === "Paper"){
-        pointComputer
-        pointPlayer
         return `Draw!`;
     } else if (playerSelection === "Paper" && computerSelection === "Scissors"){
         ++pointComputer;
@@ -68,26 +59,7 @@ function playRound(playerSelection, computerSelection) {
     } else return `noSelect`;
 }
 
-
-// // 5 round game
-// function game() {
-//     for (let i = 1; i <= 5; i++) {
-//         let enterSelect = prompt("Make your choice! (Rock, Scissors, or Paper)").trim();
-//         const playerSelection = enterSelect.charAt(0).toUpperCase() + enterSelect.slice(1).toLowerCase();
-//         const computerSelection = getComputerChoice(arr);
-//         console.log(playRound(playerSelection, computerSelection));
-//     }
-// }
-// game();
-const computerSelection = getComputerChoice(arr);
-
-
-
-// function playerChoice(){
-//     let enterSelect = prompt("Make your choice! (Rock, Scissors, or Paper)").trim();
-//         const playerSelection = enterSelect.charAt(0).toUpperCase() + enterSelect.slice(1).toLowerCase();
-//         return playerSelection;
-// }
+// console.log('playRound:',playRound(playerSelection, computerSelection))
 
 
 
@@ -95,14 +67,15 @@ function showPoint(pointPlayer, pointComputer){
     console.log(`${pointPlayer}:${pointComputer}`);
 }
 
+let promo = document.querySelector('.winner');
+
 showPoint(pointPlayer, pointComputer);
 
 function winnerDetermination(){
     if (pointPlayer > pointComputer){
-        console.log("TOU WIN!");
-    } else if (pointPlayer = pointComputer){
-        console.log("DRAW");
-    } else console.log("YOU LOSE!"); 
+        promo.textContent = "YOU WIN!";
+    } else if (pointPlayer === pointComputer){
+        promo.textContent = "DRAW";
+    } else promo.textContent = "YOU LOSE!"; 
 }
 
-winnerDetermination();
