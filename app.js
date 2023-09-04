@@ -20,7 +20,8 @@ let scoreDisplay = document.querySelector('.score');
 let winnerDisplay = document.querySelector('.winner');
 buttons.forEach(buttons => {
     buttons.addEventListener('click', (event) => {
-        event.target.classList.add('active'); 
+        event.target.classList.add('active');
+        // event.target.classList.remove('active')
         playerSelection = event.target.getAttribute('name');
         const computerSelection = getComputerChoice(arr);
         playRound(playerSelection, computerSelection);
@@ -34,7 +35,10 @@ buttons.forEach(buttons => {
 
 // one round game
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection === "Rock" && computerSelection === "Scissors"){
+    if (pointComputer === 5 || pointPlayer === 5){
+        return
+    }
+    else if (playerSelection === "Rock" && computerSelection === "Scissors"){
         ++pointPlayer;
         return `You win! ${playerSelection} beats ${computerSelection}.`;
     } else if (playerSelection === "Rock" && computerSelection === "Rock"){
@@ -61,17 +65,7 @@ function playRound(playerSelection, computerSelection) {
     } else return `noSelect`;
 }
 
-// console.log('playRound:',playRound(playerSelection, computerSelection))
-
-
-
-function showPoint(pointPlayer, pointComputer){
-    console.log(`${pointPlayer}:${pointComputer}`);
-}
-
 let promo = document.querySelector('.winner');
-
-showPoint(pointPlayer, pointComputer);
 
 function winnerDetermination(){
     if (pointPlayer > pointComputer){
