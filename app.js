@@ -25,7 +25,9 @@ buttons.forEach(buttons => {
         const computerSelection = getComputerChoice(arr);
         playRound(playerSelection, computerSelection);
         scoreDisplay.textContent = `${pointPlayer} : ${pointComputer}`;
-        winnerDetermination();
+        if (pointComputer === 5 || pointPlayer === 5){
+            winnerDetermination()
+        }
     });
 });
 
