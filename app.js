@@ -8,20 +8,18 @@ function getRandomFloat(min , max){
     return Math.round(Math.random() * (max - min) + min);
 }
 
-// const computerSelection = getComputerChoice(arr);
-// console.log('computerSelection',computerSelection)
 let pointPlayer = 0;
 let pointComputer = 0;
 let playerSelection;
 
 
-let buttons = document.querySelectorAll('.gameBtn');
-let scoreDisplay = document.querySelector('.score');
+const buttons = document.querySelectorAll('.gameBtn');
+const scoreDisplay = document.querySelector('.score');
 let winnerDisplay = document.querySelector('.winner');
 buttons.forEach(buttons => {
     buttons.addEventListener('click', (event) => {
         event.target.classList.add('active');
-        // event.target.classList.remove('active')
+        setTimeout(() => event.target.classList.remove('active'), 1000);
         playerSelection = event.target.getAttribute('name');
         const computerSelection = getComputerChoice(arr);
         playRound(playerSelection, computerSelection);
