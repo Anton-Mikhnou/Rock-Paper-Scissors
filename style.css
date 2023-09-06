@@ -3,6 +3,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url('imgs/back1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
 }
 
 .content{
@@ -24,11 +28,11 @@ body{
 }
 
 .gameBtn{
-    background-color: purple;
+    background-color: rgb(216, 232, 93);
 }
 
 .active{
-    background-color: aqua;
+    background-color: rgb(83, 230, 135);
 }
 
 span{

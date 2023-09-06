@@ -18,14 +18,15 @@ const scoreDisplay = document.querySelector('.score');
 let winnerDisplay = document.querySelector('.winner');
 buttons.forEach(buttons => {
     buttons.addEventListener('click', (event) => {
-        event.target.classList.add('active');
-        setTimeout(() => event.target.classList.remove('active'), 1000);
-        playerSelection = event.target.getAttribute('name');
+        const button = event.target
+        button.classList.add('active');
+        setTimeout(() => button.classList.remove('active'), 500);
+        playerSelection = button.getAttribute('name');
         const computerSelection = getComputerChoice(arr);
         playRound(playerSelection, computerSelection);
         scoreDisplay.textContent = `${pointPlayer} : ${pointComputer}`;
         if (pointComputer === 5 || pointPlayer === 5){
-            winnerDetermination()
+            winnerDetermination() &&  buttons.setAttribute("disabled", "disabled")
         }
     });
 });
@@ -68,8 +69,18 @@ let promo = document.querySelector('.winner');
 function winnerDetermination(){
     if (pointPlayer > pointComputer){
         promo.textContent = "YOU WIN!";
+        buttons.forEach(button => {
+            button.setAttribute("disabled", "disabled");
+        });
     } else if (pointPlayer === pointComputer){
         promo.textContent = "DRAW";
-    } else promo.textContent = "YOU LOSE!"; 
+        buttons.forEach(button => {
+            button.setAttribute("disabled", "disabled");
+        });
+    } else 
+    promo.textContent = "YOU LOSE!";
+    buttons.forEach(button => {
+        button.setAttribute("disabled", "disabled");
+    });
 }
 
