@@ -3,7 +3,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('imgs/back1.jpg');
+    background-image: url('imgs/back.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 
